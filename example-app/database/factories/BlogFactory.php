@@ -17,7 +17,7 @@ class BlogFactory extends Factory
     public function definition()
     {
         return [
-            'title' => fake()->text(30),
+            'title' => fake()->unique()->text(30),
             'text' => fake()->sentence(),
             'status' => fake()->randomElement(['0','1']),
         ];

@@ -20,7 +20,8 @@ use App\Http\Controllers\Api\v1\BlogController;
 Route::post('login', [AuthController::class,'login'])->name('login');
 Route::group(['middleware' => ['auth:sanctum']], function() {
    Route::get('profile' , [ProfileController::class,'profile'])->name('profile');  
-   Route::get('blogs' , [BlogController::class,'index'])->name('blogs');     
+   Route::get('blogs' , [BlogController::class,'index'])->name('blogs');
+   Route::get('blog/{slug:title}' , [BlogController::class,'singleBlog'])->name('singleblog');     
 });
 
 

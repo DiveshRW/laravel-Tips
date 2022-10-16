@@ -19,7 +19,7 @@ return new class extends Migration
                   ->constrained('users')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
-            $table->string('title')->nullable();
+            $table->string('title')->unique()->nullable();
             $table->longText('text')->nullable();
             $table->enum('status', [0, 1])->nullable()->default(1)
             ->comment('0 - Inactive,1-Active');
